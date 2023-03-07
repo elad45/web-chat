@@ -1,0 +1,29 @@
+﻿@model ReviewsPart2.Models.Review
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="detailsbox">
+    <h1>Review details</h1>
+    <div>
+        <div class="field overflow-auto h-100">
+            <div class="underline">@Html.DisplayNameFor(model => model.Name):</div>&nbsp; @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="field overflow-auto h-100">
+            <div class="underline">@Html.DisplayNameFor(model => model.Feedback):</div>&nbsp; @Html.DisplayFor(model => model.Feedback)
+        </div>
+        <div class="field overflow-auto h-100">
+            <div class="underline">@Html.DisplayNameFor(model => model.Rating):</div>&nbsp; @Html.DisplayFor(model => model.Rating)
+        </div>
+        <div class="field overflow-auto h-100">
+            <div class="underline">@Html.DisplayNameFor(model => model.Date):</div>&nbsp; @Html.DisplayFor(model => model.Date)
+        </div>
+    </div>
+    <div id="features">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+<div>
+</div>

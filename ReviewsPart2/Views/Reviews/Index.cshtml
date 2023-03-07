@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ReviewsPart2.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+//
+<div id="padding">
+    <div id="page-location">
+        <div id="features">
+            <center id="reviewCreator">
+                <a asp-action="Create">Create New Review</a>
+            </center>
+            <center id="average-rating">
+                <label>Average rating is:</label>
+                @if (Model.Count() > 0)
+                {
+                    @String.Format("{0:0.00}", Model.Average(x=> x.Rating))
+                    ;
+                }
+                else
+                {
+                    @String.Format("{0:0.00}",Model.Sum(r=> r.Rating))
+                    ;
+                }
+            </center>
+            <center>
+                <form asp-action="Search">
+                    <div class="input-group mb-3" id="searchBar">
+                        <input id="searchInput" name="query" type="text" class="form-control" placeholder="Enter name/feedback" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <input class="btn btn-secondary" id="searchButton" type="submit" value="Search" />
+                        </div>
+                    </div>
+                </form>
+            </center>
+        </div>
+        <div id="header">
+            <div>
+                @Html.DisplayNameFor(model => model.Name)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Feedback)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Rating)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Date)
+            </div>
+        </div>
+        <div id="mainData">
+            @foreach (var item in Model)
+            {
+                <div class="data">
+                    <div id="name" class="overflow-auto h-100">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </div>
+                    <div id="feedback" class="overflow-auto h-100">
+                        @Html.DisplayFor(modelItem => item.Feedback)
+                    </div>
+                    <div id="rating" class="overflow-auto h-100">
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </div>
+                    <div id="date" class="overflow-auto h-100">
+                        @Html.DisplayFor(modelItem => item.Date)
+                        <div id="changers">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts{
+<script> src="~/js/search.js" </script>
+}

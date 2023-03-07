@@ -1,0 +1,32 @@
+﻿@model ReviewsPart2.Models.Review
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div id="deletebox">
+    <h1>Delete review</h1>
+    <div>
+        <div class="field overflow-auto h-100">
+            <div class="underline">@Html.DisplayNameFor(model => model.Name):</div>&nbsp; @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="field overflow-auto h-100">
+            <div class="underline">@Html.DisplayNameFor(model => model.Feedback):</div>&nbsp; @Html.DisplayFor(model => model.Feedback)
+        </div>
+        <div class="field">
+            <div class="underline">@Html.DisplayNameFor(model => model.Rating):</div>&nbsp; @Html.DisplayFor(model => model.Rating)
+        </div>
+        <div class="field">
+            <div class="underline">@Html.DisplayNameFor(model => model.Date):</div>&nbsp; @Html.DisplayFor(model => model.Date)
+        </div>
+        <div id="buttonWrapper">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input id="button" type="submit" value="Delete" class="btn btn-danger" />
+            </form>
+        </div>
+        <div id="goBack">
+            <a asp-action="Index">Go back to List</a>
+        </div>
+    </div>
+</div>
