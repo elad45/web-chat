@@ -2,20 +2,28 @@
 <h3>Requirements:</h3>
 
 For running this project it's required to have Node.JS installed on your computer.
-After that navigate to the project directory and run at the CMD the following commands:
-### `npx create-react-app project_name`
-where project_name is the project name you want to have and that's will be the name of the directory where you download the repository files as well. This command will install some react realted files.
 
-It's required to have react bootstrap, signalR files as well. please run the follwing command at the node_modules directory (you can navigate there by cd project_name cd node_modules)
-### `npm install react-bootstrap bootstrap`
+After that, clone project. using cmd:
+### `git clone https://github.com/elad45/web-chat1.git`
+
+now we have to install react packages.
+### `cd clientSide`
+install packages by:
 ### `npm i`
-after it has finished, navigate back to project_name directory run
-### `npm install bootstrap`
-### `npm install react-router-dom@6`
+Run project by:
 ### `npm start`
 Open [http://localhost:3000](http://localhost:3000) to view the project in your browser.
 
+
 if you want to chat with yourself, please run npm start again on the cmd for having a different port.
+
+<h3> running the servers:</h3>
+
+on the main directory you have ReviewsPart2.sln, server.sln.
+ReviewsPart2.sln is the server for the reviews page and server.sln is the API.
+please run both of them.
+- note: before running ReviewPart2 please open Nuget Console Manger and run the commands add-migartion and after it run-database
+
 <h3>How to use the project:</h3>
 
 The chat has 3 routes.
@@ -70,18 +78,5 @@ besides that there are two more servers.
 one is the server that holds the API on localhost:5094
 and the other one is the server for the reviews page on localhost:5104.
 
-after you login\register it will forward you to the chatscren and on the upper-left side you'll see a link to the reviews page.
+after you login/register it will forward you to the chat screen and on the upper-left side you'll see a link to the reviews page.
 
-
-
-<h1>for running the servers:</h1>
-
-on the main directory you have ReviewsPart2.sln, NoDBPART3.sln.
-ReviewsPart2.sln is the server for the reviews page and NoDBPART3.sln is the API.
-please run both of them.
-- note: before running ReviewPart2 please open Nuget Console Manger and run the commands add-migartion and after it run-database
-
-for the react please go to reactEx1 and on the cmd type npm start.
-
-
-"# web-chat1" 
