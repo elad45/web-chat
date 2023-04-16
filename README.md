@@ -80,3 +80,7 @@ and the other one is the server for the reviews page on localhost:5104.
 
 after you login/register it will forward you to the chat screen and on the upper-left side you'll see a link to the reviews page.
 
+
+https://user-images.githubusercontent.com/92677845/232287734-84f1de64-5432-4a74-b3bb-6710672586d1.mp4
+
+
